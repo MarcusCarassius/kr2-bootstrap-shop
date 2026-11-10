@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакты — MosLife</title>
+  <meta name="description" content="Контакты MosLife: адрес, телефон, e-mail, соцсети и форма обратной связи. Афиша мероприятий Москвы и окрестностей.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav class="navbar navbar-expand-lg navbar-moslife fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Mos<span class="brand-accent">Life</span>
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог событий</a></li>
+          <li class="nav-item"><a class="nav-link" href="meetings.html">Мероприятия города</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contacts.html">Контакты</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button class="btn btn-moslife-accent w-100"
+                    data-bs-toggle="modal" data-bs-target="#searchModal">
+              <i class="bi bi-search me-1" aria-hidden="true"></i>Найти событие
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ======= ХЛЕБНЫЕ КРОШКИ ======= -->
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+      <span class="breadcrumbs__current" aria-current="page">Контакты</span>
+    </nav>
+
+    <!-- ======= ЗАГОЛОВОК ======= -->
+    <section class="hero" aria-labelledby="contacts-title">
+      <span class="hero__badge">
+        <i class="bi bi-envelope" aria-hidden="true"></i> Обратная связь
+      </span>
+      <h1 class="hero__title" id="contacts-title">Контакты</h1>
+      <p class="hero__lead mb-0">
+        Мы отвечаем на вопросы по событиям, покупке билетов и сотрудничеству.
+        Напишите через форму или свяжитесь удобным способом — отвечаем в течение рабочего дня.
+      </p>
+    </section>
+
+    <!-- ======= КОНТАКТЫ + ФОРМА ======= -->
+    <section class="mb-5" aria-labelledby="contacts-info-title">
+      <div class="row g-4 align-items-stretch">
+
+        <!-- Контактная информация -->
+        <div class="col-lg-5">
+          <div class="event-side h-100">
+            <h2 id="contacts-info-title" class="h5 mb-3">Как с нами связаться</h2>
+
+            <ul class="event-side__list">
+              <li>
+                <i class="bi bi-geo-alt event-side__check" aria-hidden="true"></i>
+                <strong>Адрес:</strong> Москва, ул. Городская, 1
+              </li>
+              <li>
+                <i class="bi bi-telephone event-side__check" aria-hidden="true"></i>
+                <strong>Телефон:</strong> <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+              </li>
+              <li>
+                <i class="bi bi-envelope event-side__check" aria-hidden="true"></i>
+                <strong>E-mail:</strong> <a href="mailto:hello@moslife.ru">hello@moslife.ru</a>
+              </li>
+              <li>
+                <i class="bi bi-clock event-side__check" aria-hidden="true"></i>
+                <strong>Часы работы:</strong> пн–пт, 10:00–19:00
+              </li>
+            </ul>
+
+            <h3 class="h6 mb-2">Мы в соцсетях</h3>
+            <div class="d-flex gap-2 mb-3">
+              <a href="#" class="btn btn-moslife-ghost btn-sm" aria-label="Telegram">
+                <i class="bi bi-telegram" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="btn btn-moslife-ghost btn-sm" aria-label="VK">
+                <i class="bi bi-chat-dots" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="btn btn-moslife-ghost btn-sm" aria-label="YouTube">
+                <i class="bi bi-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <a href="mailto:hello@moslife.ru" class="btn btn-moslife-accent w-100">
+              <i class="bi bi-envelope me-1" aria-hidden="true"></i>Написать на e-mail
+            </a>
+          </div>
+        </div>
+
+        <!-- Форма обратной связи -->
+        <div class="col-lg-7">
+          <div class="subscribe h-100">
+            <h2 class="h5 mb-2">Форма обратной связи</h2>
+            <p class="text-muted-soft mb-4">
+              Опишите вопрос — укажите контакт, и мы ответим в течение рабочего дня.
+            </p>
+
+            <form id="contactForm" action="#" method="post" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="contact-name">Имя</label>
+                  <input class="form-control" type="text" id="contact-name" name="name" required autocomplete="name">
+                  <div class="invalid-feedback">Укажите имя.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="contact-email">E-mail</label>
+                  <input class="form-control" type="email" id="contact-email" name="email" required autocomplete="email">
+                  <div class="invalid-feedback">Укажите корректный e-mail.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="contact-topic">Тема</label>
+                  <select class="form-select" id="contact-topic" name="topic" required>
+                    <option value="">— выберите тему —</option>
+                    <option>Вопрос по событию</option>
+                    <option>Покупка билетов</option>
+                    <option>Сотрудничество</option>
+                    <option>Проблема на сайте</option>
+                    <option>Другое</option>
+                  </select>
+                  <div class="invalid-feedback">Выберите тему.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="contact-message">Сообщение</label>
+                  <textarea class="form-control" id="contact-message" name="message" rows="5" required minlength="10"></textarea>
+                  <div class="invalid-feedback">Напишите сообщение (не менее 10 символов).</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="contact-agree" name="agree" required>
+                    <label class="form-check-label" for="contact-agree">
+                      Согласен(на) на обработку персональных данных
+                    </label>
+                    <div class="invalid-feedback">Нужно согласие.</div>
+                  </div>
+                </div>
+                <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+                  <button class="btn btn-moslife-accent" type="submit">
+                    <i class="bi bi-send me-1" aria-hidden="true"></i>Отправить
+                  </button>
+                  <p id="contactStatus" class="small mb-0" role="status" aria-live="polite"></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= КАК ДОБРАТЬСЯ ======= -->
+    <section class="mb-5" aria-labelledby="route-title">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7">
+          <div class="event-details h-100">
+            <h2 id="route-title" class="h4 mb-3">Как добраться</h2>
+            <dl class="event-details__grid">
+              <div>
+                <dt>На метро</dt>
+                <dd>Ст. «Городская», выход №2, 5 минут пешком</dd>
+              </div>
+              <div>
+                <dt>На электричке</dt>
+                <dd>До ст. «Городская», далее 7 минут пешком</dd>
+              </div>
+              <div>
+                <dt>На автобусе</dt>
+                <dd>Маршруты 12, 34, 101 — остановка «Городская площадь»</dd>
+              </div>
+              <div>
+                <dt>На автомобиле</dt>
+                <dd>Парковка во дворе, въезд с ул. Городской</dd>
+              </div>
+            </dl>
+            <p class="text-muted-soft small mb-0">
+              Для гостей с ограниченной мобильностью доступен отдельный вход со стороны двора.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="event-hero__cover h-100">
+            <img class="event-hero__cover-img" src="img/placeholder.png" alt="Карта: Москва, ул. Городская, 1">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= FAQ ======= -->
+    <section class="mb-5" aria-labelledby="faq-title">
+      <div class="event-details">
+        <h2 id="faq-title" class="h4 mb-3">Частые вопросы</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq1-heading">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                Как купить билет на событие?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Откройте карточку события и нажмите кнопку действия — откроется форма записи.
+                Оставьте контакт, и мы отправим билет на e-mail после подтверждения организатором.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq2-heading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                Berёт ли MosLife комиссию?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Нет. Вы платите только за событие по цене организатора — MosLife не добавляет
+                собственных сборов.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq3-heading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                Можно ли отменить запись?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Да, условия отмены указаны в карточке события. Обычно запись можно отменить
+                не позднее чем за 24 часа до начала. Напишите на hello@moslife.ru.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faq4-heading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                Как предложить своё событие?
+              </button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Выберите в форме обратной связи тему «Сотрудничество» и опишите мероприятие:
+                дату, место, стоимость и контакт организатора. Мы свяжемся с вами.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a class="site-footer__brand d-inline-flex align-items-center gap-2" href="index.html">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i> MosLife
+          </a>
+          <p class="site-footer__list mt-2 mb-0">
+            Афиша мероприятий Москвы и окрестностей: культура, спорт и городские события.
+          </p>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="site-footer__title">Разделы</div>
+          <ul class="site-footer__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог событий</a></li>
+            <li><a href="meetings.html">Мероприятия города</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="site-footer__title">Города</div>
+          <ul class="site-footer__list">
+            <li><a href="catalog.html">Москва</a></li>
+            <li><a href="catalog.html">Химки</a></li>
+            <li><a href="catalog.html">Люберцы</a></li>
+            <li><a href="catalog.html">Красногорск</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="site-footer__title">Контакты</div>
+          <ul class="site-footer__list">
+            <li><i class="bi bi-geo-alt" aria-hidden="true"></i> Москва, ул. Городская, 1</li>
+            <li><i class="bi bi-envelope" aria-hidden="true"></i> hello@moslife.ru</li>
+            <li><i class="bi bi-telephone" aria-hidden="true"></i> +7 (495) 000-00-00</li>
+          </ul>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#" class="btn btn-moslife-ghost btn-sm" aria-label="Telegram"><i class="bi bi-telegram" aria-hidden="true"></i></a>
+            <a href="#" class="btn btn-moslife-ghost btn-sm" aria-label="VK"><i class="bi bi-chat-dots" aria-hidden="true"></i></a>
+            <a href="#" class="btn btn-moslife-ghost btn-sm" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom d-flex flex-wrap justify-content-between gap-2">
+        <span>© 2025 MosLife. Все права защищены.</span>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======= MODAL: ПОИСК ======= -->
+  <div class="modal fade modal-moslife" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="searchModalLabel">Найти событие</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <form action="catalog.html" method="get">
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label" for="modal-q">Что ищем?</label>
+              <input class="form-control" type="text" id="modal-q" name="q" placeholder="Событие, площадка...">
+            </div>
+            <div class="row g-2">
+              <div class="col-sm-6">
+                <label class="form-label" for="modal-place">Место</label>
+                <select class="form-select" id="modal-place" name="place">
+                  <option value="">Везде</option>
+                  <option>Только Москва</option>
+                  <option>Химки</option>
+                  <option>Люберцы</option>
+                  <option>Красногорск</option>
+                  <option>Одинцово</option>
+                  <option>Котельники</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="modal-sphere">Сфера</label>
+                <select class="form-select" id="modal-sphere" name="sphere">
+                  <option value="">Все сферы</option>
+                  <option>Культура</option>
+                  <option>Спорт</option>
+                  <option>Развлечения</option>
+                  <option>Образование</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-moslife-ghost" data-bs-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-moslife-accent">Найти</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= MODAL: ЗАПИСЬ / ЗАЯВКА (для совместимости с signup.js) ======= -->
+  <div class="modal fade modal-moslife" id="signupModal" tabindex="-1"
+       aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="signupModalLabel">Запись на событие</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <form action="#" method="post" novalidate>
+          <div class="modal-body">
+            <div class="signup-event" aria-live="polite">
+              <div class="signup-event__title" id="signupEventTitle"></div>
+              <div class="signup-event__meta">
+                <span><i class="bi bi-calendar3" aria-hidden="true"></i> <span id="signupEventDate"></span></span>
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> <span id="signupEventPlace"></span></span>
+                <span><i class="bi bi-ticket-perforated" aria-hidden="true"></i> <span id="signupEventPrice"></span></span>
+              </div>
+            </div>
+
+            <input type="hidden" id="signupEventField" name="event">
+
+            <div class="mb-3">
+              <label class="form-label" for="signupName">Имя и фамилия</label>
+              <input class="form-control" type="text" id="signupName" name="name" required autocomplete="name">
+              <div class="invalid-feedback">Укажите имя.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="signupContact">E-mail или телефон</label>
+              <input class="form-control" type="text" id="signupContact" name="contact" required autocomplete="email">
+              <div class="invalid-feedback">Укажите e-mail или телефон для связи.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="signupComment">Комментарий (необязательно)</label>
+              <textarea class="form-control" id="signupComment" name="comment" rows="2"></textarea>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="signupAgree" name="agree" required>
+              <label class="form-check-label" for="signupAgree">
+                Согласен(на) на обработку персональных данных
+              </label>
+              <div class="invalid-feedback">Нужно согласие.</div>
+            </div>
+
+            <p id="signupStatus" class="small mb-0 mt-3" role="status" aria-live="polite"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-moslife-ghost" data-bs-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-moslife-accent">Отправить заявку</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="back-to-top" aria-label="Наверх">↑</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/signup.js"></script>
+  <script>
+    // Валидация формы обратной связи (демо, без сервера)
+    (function () {
+      'use strict';
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+      var status = document.getElementById('contactStatus');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          if (status) {
+            status.textContent = 'Проверьте поля формы.';
+            status.classList.remove('text-success');
+            status.classList.add('text-danger');
+          }
+          return;
+        }
+
+        var nameInput = form.querySelector('#contact-name');
+        var name = nameInput ? nameInput.value.trim() : '';
+
+        if (status) {
+          status.textContent = 'Спасибо' + (name ? ', ' + name : '') + '! Сообщение отправлено, мы ответим в течение рабочего дня.';
+          status.classList.remove('text-danger');
+          status.classList.add('text-success');
+        }
+
+        form.reset();
+        form.classList.remove('was-validated');
+
+        // Здесь будет реальная отправка:
+        // fetch(form.action, { method: 'POST', body: new FormData(form) })
+      });
+    })();
+  </script>
+</body>
+</html>

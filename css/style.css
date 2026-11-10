@@ -1,0 +1,771 @@
+/* ===============================
+   1. Переменные проекта (MosLife)
+   =============================== */
+
+:root {
+  --color-bg: #303030;
+  --color-text: #222222;
+  --color-muted: #b9b9b9;
+  --color-primary: #2D316D;
+  --color-primary-dark: #000E45;
+  --color-border: #FFF1BA;
+  --color-surface: #000E45;
+  --color-surface-accent: #eef5ff;
+  --color-danger: #b00020;
+  --color-success: #168a2f;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-tyrian: #B200FF;
+  --color-gold: #FFBA00;
+  --color-darkgold: #A07300;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --header-height: 96px;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --glow-color: #ffffff;
+  --glow: 0 0 35px var(--glow-color);
+
+  --element-outline-color: var(--color-border);
+  --btn-outline-color: var(--color-border);
+
+  --bs-body-bg: var(--color-bg);
+  --bs-body-color: var(--color-border);
+  --bs-border-color: var(--color-border);
+  --bs-primary: var(--color-primary);
+  --bs-link-color: var(--color-border);
+  --bs-link-hover-color: var(--glow-color);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + var(--space-md));
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-border);
+}
+
+main {
+  padding-top: calc(var(--header-height) + var(--space-lg));
+}
+
+a { color: var(--color-border); }
+a:hover { color: var(--glow-color); }
+a:focus-visible {
+  outline: 2px solid var(--glow-color);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 { color: var(--color-border); }
+
+.text-muted-soft { color: var(--color-muted) !important; }
+
+
+/* ===============================
+   2. Navbar
+   =============================== */
+
+.site-header,
+.navbar-moslife {
+  background-color: var(--color-surface);
+  border-bottom: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  min-height: var(--header-height);
+}
+
+.navbar-moslife .navbar-brand {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--element-outline-color);
+}
+.navbar-moslife .navbar-brand:hover {
+  color: var(--glow-color);
+  text-shadow: 0 0 12px var(--glow-color);
+}
+
+.navbar-moslife .brand-accent { color: var(--element-outline-color); }
+
+.navbar-moslife .nav-link {
+  color: var(--element-outline-color);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  outline: 3px solid var(--element-outline-color);
+  padding: var(--space-sm) var(--space-md);
+  margin: 0 var(--space-xs);
+  transition: box-shadow .2s, color .2s, outline-color .2s;
+}
+.navbar-moslife .nav-link:hover,
+.navbar-moslife .nav-link:focus {
+  color: var(--glow-color);
+  outline-color: var(--glow-color);
+  box-shadow: var(--glow);
+}
+.navbar-moslife .nav-link.active {
+  color: var(--glow-color);
+  outline: 3px solid var(--glow-color);
+  box-shadow: var(--glow);
+}
+
+.navbar-moslife .navbar-toggler {
+  color: var(--element-outline-color);
+  border: 3px solid var(--element-outline-color);
+  border-radius: var(--radius-sm);
+}
+.navbar-moslife .navbar-toggler:focus { box-shadow: none; }
+
+@media (max-width: 991.98px) {
+  .navbar-moslife .nav-link { margin: var(--space-xs) 0; }
+}
+
+
+/* ===============================
+   3. Hero
+   =============================== */
+
+.hero {
+  background-color: var(--color-surface);
+  border: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.hero__title {
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+  color: var(--element-outline-color);
+}
+.hero__title-accent { color: var(--element-outline-color); }
+.hero__lead { color: var(--color-muted); }
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-md);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--element-outline-color);
+  background-color: rgba(255, 241, 186, .08);
+  border: 2px solid var(--element-outline-color);
+  border-radius: 999px;
+  margin-bottom: var(--space-md);
+}
+
+.hero__stat {
+  padding: var(--space-md);
+  text-align: center;
+  background-color: var(--color-primary-dark);
+  border: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-md);
+  height: 100%;
+}
+.hero__stat-value { font-size: 26px; font-weight: 700; color: var(--element-outline-color); }
+.hero__stat-label { font-size: 13px; color: var(--color-muted); }
+
+
+/* ===============================
+   4. Формы и поиск
+   =============================== */
+
+.search-panel {
+  background-color: var(--color-primary-dark);
+  border: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+}
+
+.form-control,
+.form-select {
+  color: var(--element-outline-color);
+  background-color: var(--color-surface);
+  border: 2px solid var(--element-outline-color);
+  border-radius: var(--radius-sm);
+}
+.form-control::placeholder { color: var(--color-muted); opacity: 1; }
+.form-control:focus,
+.form-select:focus {
+  color: var(--glow-color);
+  background-color: var(--color-surface);
+  border-color: var(--glow-color);
+  box-shadow: 0 0 0 .2rem rgba(255, 241, 186, .35);
+}
+.form-select option { background-color: var(--color-surface); color: var(--element-outline-color); }
+
+.input-group-text {
+  background-color: var(--color-surface);
+  border: 2px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+}
+
+
+/* ===============================
+   5. Кнопки
+   =============================== */
+
+.btn {
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: box-shadow .2s, color .2s, outline-color .2s, background-color .2s;
+}
+
+.btn-moslife,
+.btn-moslife-accent,
+.btn-moslife-ghost {
+  color: var(--btn-outline-color);
+  border: none;
+  outline: 3px solid var(--btn-outline-color);
+}
+
+.btn-moslife {
+  background-color: var(--color-primary);
+}
+.btn-moslife:hover,
+.btn-moslife:focus {
+  color: var(--glow-color);
+  outline-color: var(--glow-color);
+  box-shadow: var(--glow);
+  background-color: var(--color-primary);
+}
+
+.btn-moslife-accent {
+  background-color: var(--color-primary);
+}
+.btn-moslife-accent:hover,
+.btn-moslife-accent:focus {
+  color: var(--glow-color);
+  outline-color: var(--glow-color);
+  box-shadow: var(--glow);
+  background-color: var(--color-primary);
+}
+
+.btn-moslife-ghost {
+  background-color: transparent;
+}
+.btn-moslife-ghost:hover,
+.btn-moslife-ghost:focus {
+  color: var(--glow-color);
+  outline-color: var(--glow-color);
+  box-shadow: var(--glow);
+}
+
+
+/* ===============================
+   6. Чипы / бейджи
+   =============================== */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--element-outline-color);
+  background-color: rgba(255, 241, 186, .08);
+  border: 2px solid var(--element-outline-color);
+  border-radius: 999px;
+  text-decoration: none;
+}
+.chip:hover {
+  color: var(--glow-color);
+  border-color: var(--glow-color);
+  box-shadow: var(--glow);
+}
+
+.chip__icon {
+  margin-right: var(--space-xs);
+}
+
+
+/* ===============================
+   7. Карточки событий
+   =============================== */
+
+.card-event {
+  background-color: var(--color-surface);
+  border: 3px solid var(--element-outline-color);
+  border-radius: var(--radius-md);
+  color: var(--element-outline-color);
+  height: 100%;
+  transition: box-shadow .2s, border-color .2s, color .2s;
+}
+.card-event:hover {
+  color: var(--glow-color);
+  border-color: var(--glow-color);
+  box-shadow: var(--glow);
+}
+
+.card-event__cover {
+  height: 150px;
+  overflow: hidden;
+  background-color: var(--color-primary-dark);
+  border-bottom: 3px solid var(--element-outline-color);
+  border-top-left-radius: calc(var(--radius-md) - 3px);
+  border-top-right-radius: calc(var(--radius-md) - 3px);
+}
+
+.card-event__cover-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-event .card-title {
+  font-size: 17px;
+  margin-bottom: var(--space-sm);
+  color: var(--element-outline-color);
+}
+
+.card-event__price { font-weight: 700; color: var(--element-outline-color); }
+.card-event__price--free { color: var(--color-success); }
+
+.card-event__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+
+/* Модификатор «выделенное событие»
+   Палитра: только gold, dark-gold, tyrian, white */
+.card-event--featured {
+  color: var(--color-darkgold);
+  background-color: var(--color-gold);
+  border-color: var(--color-darkgold);
+}
+
+.card-event--featured .card-title,
+.card-event--featured .card-event__price {
+  color: var(--color-darkgold);
+}
+
+.card-event--featured .card-event__cover {
+  border-bottom-color: var(--color-darkgold);
+}
+
+.card-event--featured .card-event__meta {
+  color: var(--color-darkgold);
+}
+
+.card-event--featured:hover {
+  color: var(--color-white);
+  border-color: var(--color-white);
+  box-shadow: 0 0 35px var(--color-gold);
+}
+
+/* Чип внутри featured-карточки */
+.card-event--featured .chip {
+  color: var(--color-gold);
+  background-color: var(--color-tyrian);
+  border-color: var(--color-darkgold);
+}
+.card-event--featured .chip:hover {
+  color: var(--color-white);
+  border-color: var(--color-white);
+  box-shadow: 0 0 35px var(--color-gold);
+}
+
+/* Кнопка «Билеты» внутри featured-карточки */
+.card-event--featured .btn-moslife-accent {
+  color: var(--color-gold);
+  background-color: var(--color-tyrian);
+  outline-color: var(--color-darkgold);
+}
+.card-event--featured .btn-moslife-accent:hover,
+.card-event--featured .btn-moslife-accent:focus {
+  color: var(--color-white);
+  outline-color: var(--color-white);
+  box-shadow: 0 0 35px var(--color-gold);
+}
+
+/* Кнопка «Подробнее» (ghost) внутри featured-карточки */
+.card-event--featured .btn-moslife-ghost {
+  color: var(--color-darkgold);
+  outline-color: var(--color-darkgold);
+  background-color: transparent;
+}
+.card-event--featured .btn-moslife-ghost:hover,
+.card-event--featured .btn-moslife-ghost:focus {
+  color: var(--color-white);
+  outline-color: var(--color-white);
+  box-shadow: 0 0 35px var(--color-gold);
+}
+
+
+/* ===============================
+   8. Подборка месяца
+   =============================== */
+
+.feature-pick {
+  background-color: var(--color-surface);
+  border: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.feature-pick__cover {
+  min-height: 240px;
+  background-color: var(--color-primary-dark);
+  border-right: 3px solid var(--element-outline-color);
+  overflow: hidden;
+}
+.feature-pick__cover-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
+}
+@media (max-width: 767.98px) {
+  .feature-pick__cover {
+    border-right: none;
+    border-bottom: 3px solid var(--element-outline-color);
+  }
+}
+
+
+/* ===============================
+   9. Список ближайших дат
+   =============================== */
+
+.meet-list .list-group-item {
+  background-color: var(--color-surface);
+  color: var(--element-outline-color);
+  border: 3px solid var(--element-outline-color);
+  border-radius: var(--radius-md) !important;
+  margin-bottom: var(--space-sm);
+  transition: box-shadow .2s, border-color .2s, color .2s;
+}
+.meet-list .list-group-item:hover {
+  color: var(--glow-color);
+  border-color: var(--glow-color);
+  box-shadow: var(--glow);
+}
+
+.meet-date {
+  min-width: 62px;
+  padding: var(--space-xs) var(--space-sm);
+  text-align: center;
+  line-height: 1.05;
+  background-color: var(--color-primary-dark);
+  border: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-sm);
+}
+.meet-date__day { display: block; font-size: 22px; font-weight: 700; color: var(--element-outline-color); }
+.meet-date__month { display: block; font-size: 12px; text-transform: uppercase; color: var(--element-outline-color); }
+
+
+/* ===============================
+   10. Инфо-панель
+   =============================== */
+
+.info-panel {
+  background-color: var(--color-surface);
+  border: 4px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  height: 100%;
+}
+.info-panel__list {
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+  list-style: none;
+  color: var(--color-muted);
+}
+.info-panel__list li { margin-bottom: var(--space-sm); }
+.info-panel__check { color: var(--element-outline-color); margin-right: var(--space-sm); }
+
+
+/* ===============================
+   11. CTA подписка
+   =============================== */
+
+.subscribe {
+  background-color: var(--color-surface);
+  border: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+
+/* ===============================
+   12. Модалка
+   =============================== */
+
+.modal-moslife .modal-content {
+  background-color: var(--color-surface);
+  color: var(--element-outline-color);
+  border: 3px solid var(--element-outline-color);
+  border-radius: var(--radius-lg);
+}
+.modal-moslife .modal-header,
+.modal-moslife .modal-footer {
+  border-color: var(--element-outline-color);
+}
+.modal-moslife .btn-close { filter: invert(1) brightness(2); }
+
+/* Сводка выбранного события в модалке записи */
+.signup-event {
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  border: 3px solid var(--element-outline-color);
+  border-radius: var(--radius-md);
+  color: var(--element-outline-color);
+  background-color: var(--color-primary-dark);
+}
+.signup-event__title { font-weight: 700; margin-bottom: var(--space-xs); }
+.signup-event__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+
+/* ===============================
+   13. Offcanvas
+   =============================== */
+
+.offcanvas-moslife {
+  background-color: var(--color-surface);
+  color: var(--element-outline-color);
+  border-right: 3px solid var(--element-outline-color);
+}
+
+
+/* ===============================
+   14. Footer
+   =============================== */
+
+.site-footer {
+  background-color: var(--color-primary-dark);
+  border-top: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  padding: var(--space-xl) var(--space-lg);
+  margin-top: var(--space-xl);
+}
+.site-footer__brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--element-outline-color);
+  text-decoration: none;
+}
+.site-footer__title { font-size: 14px; font-weight: 700; color: var(--element-outline-color); margin-bottom: var(--space-sm); }
+.site-footer__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+.site-footer__list li { margin-bottom: var(--space-xs); }
+.site-footer__list a { color: var(--color-muted); text-decoration: none; }
+.site-footer__list a:hover {
+  color: var(--glow-color);
+  text-shadow: 0 0 12px var(--glow-color);
+}
+.site-footer__bottom {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--element-outline-color);
+  font-size: 13px;
+  color: var(--element-outline-color);
+}
+
+
+/* ===============================
+   15. Back-to-top
+   =============================== */
+
+.back-to-top {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 1080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--element-outline-color);
+  background-color: var(--color-primary);
+  outline: 3px solid var(--element-outline-color);
+  border-radius: 50%;
+  transition: box-shadow .2s, outline-color .2s, color .2s;
+}
+.back-to-top:hover {
+  color: var(--glow-color);
+  outline-color: var(--glow-color);
+  box-shadow: var(--glow);
+}
+
+
+/* ===============================
+   16. Страница события
+   =============================== */
+
+.event-hero {
+  background-color: var(--color-surface);
+  border: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+}
+
+.event-hero__cover {
+  min-height: 320px;
+  background-color: var(--color-primary-dark);
+  border-right: 3px solid var(--element-outline-color);
+  overflow: hidden;
+}
+.event-hero__cover-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+@media (max-width: 767.98px) {
+  .event-hero__cover {
+    border-right: none;
+    border-bottom: 3px solid var(--element-outline-color);
+  }
+}
+
+.event-hero__body { padding: var(--space-xl); }
+
+.event-hero__title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+}
+
+.event-hero__lead { color: var(--color-muted); }
+
+.event-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-lg);
+  font-size: 14px;
+  color: var(--color-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+.breadcrumbs a { color: var(--color-muted); }
+.breadcrumbs a:hover { color: var(--glow-color); }
+.breadcrumbs__sep { color: var(--color-muted); }
+.breadcrumbs__current { color: var(--element-outline-color); }
+
+/* Сайдбар с ценой и CTA */
+.event-side {
+  background-color: var(--color-surface);
+  border: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  height: 100%;
+}
+.event-side__price {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--element-outline-color);
+  margin-bottom: var(--space-md);
+}
+.event-side__list {
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+  list-style: none;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+.event-side__list li { margin-bottom: var(--space-sm); }
+.event-side__check { color: var(--element-outline-color); margin-right: var(--space-sm); }
+
+/* Детали события */
+.event-details {
+  background-color: var(--color-surface);
+  border: 3px solid var(--element-outline-color);
+  color: var(--element-outline-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+.event-details h2 { margin-bottom: var(--space-md); }
+.event-details__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md) var(--space-xl);
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+}
+.event-details__grid dt {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-bottom: var(--space-xs);
+}
+.event-details__grid dd {
+  margin: 0;
+  color: var(--element-outline-color);
+  font-weight: 700;
+}
+@media (max-width: 575.98px) {
+  .event-details__grid { grid-template-columns: 1fr; }
+}
+
+/* Галерея */
+.event-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+.event-gallery__item {
+  display: block;
+  overflow: hidden;
+  border: 3px solid var(--element-outline-color);
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-dark);
+}
+.event-gallery__item:hover { border-color: var(--glow-color); box-shadow: var(--glow); }
+.event-gallery__img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+@media (max-width: 575.98px) {
+  .event-gallery { grid-template-columns: 1fr; }
+  .event-gallery__img { height: 200px; }
+}

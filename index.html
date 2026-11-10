@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MosLife — афиша мероприятий Москвы и Подмосковья</title>
+  <meta name="description" content="MosLife — подборки ближайших культурных, спортивных и других мероприятий Москвы и окрестностей: Химки, Люберцы и др. Поиск событий, стоимость посещения, покупка билетов.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Тема поверх Bootstrap -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav class="navbar navbar-expand-lg navbar-moslife fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Mos<span class="brand-accent">Life</span>
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог событий</a></li>
+          <li class="nav-item"><a class="nav-link" href="meetings.html">Мероприятия города</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <button class="btn btn-moslife-accent w-100"
+                    data-bs-toggle="modal" data-bs-target="#searchModal">
+              <i class="bi bi-search me-1" aria-hidden="true"></i>Найти событие
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ======= HERO ======= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <span class="hero__badge">
+            <i class="bi bi-broadcast" aria-hidden="true"></i> Афиша Москвы и окрестностей
+          </span>
+          <h1 class="hero__title" id="hero-title">
+            Ближайшие события<br>Москвы и <span class="hero__title-accent">Подмосковья</span>
+          </h1>
+          <p class="hero__lead mb-4">
+            Культурные, спортивные и городские мероприятия в Москве, Химках, Люберцах и других
+            городах-спутниках. Находите события по месту, сфере и дате, узнавайте стоимость
+            посещения и покупайте билеты в пару кликов.
+          </p>
+
+          <form class="search-panel row g-2" action="catalog.html" method="get">
+            <div class="col-12 col-lg-5">
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-search" aria-hidden="true"></i></span>
+                <input class="form-control" type="text" name="q" placeholder="Событие, площадка...">
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <select class="form-select" name="place" aria-label="Место">
+                <option value="">Везде</option>
+                <option>Только Москва</option>
+                <option>Химки</option>
+                <option>Люберцы</option>
+                <option>Красногорск</option>
+                <option>Одинцово</option>
+                <option>Котельники</option>
+              </select>
+            </div>
+            <div class="col-6 col-lg-2">
+              <select class="form-select" name="sphere" aria-label="Сфера">
+                <option value="">Все сферы</option>
+                <option>Культура</option>
+                <option>Спорт</option>
+                <option>Развлечения</option>
+                <option>Образование</option>
+              </select>
+            </div>
+            <div class="col-12 col-lg-2 d-grid">
+              <button class="btn btn-moslife-accent" type="submit">Найти</button>
+            </div>
+          </form>
+
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <a href="catalog.html" class="chip"><i class="bi bi-calendar-event chip__icon" aria-hidden="true"></i>Сегодня</a>
+            <a href="catalog.html" class="chip"><i class="bi bi-calendar-week chip__icon" aria-hidden="true"></i>Выходные</a>
+            <a href="catalog.html" class="chip"><i class="bi bi-ticket-perforated chip__icon" aria-hidden="true"></i>Бесплатно</a>
+            <a href="catalog.html" class="chip"><i class="bi bi-trophy chip__icon" aria-hidden="true"></i>Спорт</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="row g-3">
+            <div class="col-6"><div class="hero__stat"><div class="hero__stat-value">1 200+</div><div class="hero__stat-label">событий</div></div></div>
+            <div class="col-6"><div class="hero__stat"><div class="hero__stat-value">40+</div><div class="hero__stat-label">городов</div></div></div>
+            <div class="col-6"><div class="hero__stat"><div class="hero__stat-value">300+</div><div class="hero__stat-label">площадок</div></div></div>
+            <div class="col-6"><div class="hero__stat"><div class="hero__stat-value">24/7</div><div class="hero__stat-label">билеты</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= МИССИЯ ======= -->
+    <section class="mb-5" aria-labelledby="mission-title">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-4">
+          <h2 id="mission-title" class="mb-2">Наша миссия</h2>
+          <p class="text-muted-soft mb-0">
+            Сделать городские события Москвы и её окрестностей понятными и доступными:
+            собрать афишу в одном месте, показать стоимость и помочь быстро купить билет.
+          </p>
+        </div>
+        <div class="col-lg-8">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="card-event h-100 p-4">
+                <div class="fs-2 mb-2" style="color: var(--element-outline-color)"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
+                <h3 class="h6 fw-bold">По месту и району</h3>
+                <p class="small text-muted-soft mb-0">Москва, Химки, Люберцы, Красногорск и другие города-спутники.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-event h-100 p-4">
+                <div class="fs-2 mb-2" style="color: var(--element-outline-color)"><i class="bi bi-funnel" aria-hidden="true"></i></div>
+                <h3 class="h6 fw-bold">Удобные фильтры</h3>
+                <p class="small text-muted-soft mb-0">Сфера, дата, цена и формат — находите событие за пару кликов.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-event h-100 p-4">
+                <div class="fs-2 mb-2" style="color: var(--element-outline-color)"><i class="bi bi-ticket-perforated" aria-hidden="true"></i></div>
+                <h3 class="h6 fw-bold">Билеты и цены</h3>
+                <p class="small text-muted-soft mb-0">Прозрачная стоимость посещения и прямые ссылки на покупку.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= ПОДБОРКА МЕСЯЦА ======= -->
+    <section class="mb-5" aria-labelledby="pick-title">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+        <div>
+          <h2 id="pick-title" class="mb-1">Подборка месяца</h2>
+          <p class="text-muted-soft mb-0">Главные события ноября в Москве и окрестностях</p>
+        </div>
+        <a href="catalog.html" class="btn btn-moslife-ghost btn-sm">Все события <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
+      <article class="feature-pick">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <div class="feature-pick__cover h-100">
+              <img class="feature-pick__cover-img"
+                   src="img/placeholder.png"
+                   alt="Осенний фестиваль музыки под открытым небом">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="p-4 p-lg-5">
+              <span class="chip mb-3"><i class="bi bi-music-note-beamed chip__icon" aria-hidden="true"></i>Культура · Концерт</span>
+              <h3 class="mb-2">Осенний фестиваль музыки под открытым небом</h3>
+              <p class="text-muted-soft mb-3">
+                Большая сцена, оркестр и световое шоу в парке «Химки-Центральный».
+                Событие месяца по версии редакции MosLife: живая музыка, ярмарка и вечерний перформанс.
+              </p>
+              <div class="card-event__meta mb-3">
+                <span><i class="bi bi-calendar3" aria-hidden="true"></i> 16 ноября, 18:00</span>
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Химки, парк «Центральный»</span>
+                <span><i class="bi bi-clock" aria-hidden="true"></i> 3 часа</span>
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <span class="fs-5 fw-bold">от 900 ₽</span>
+                <button type="button"
+                        class="btn btn-moslife-accent"
+                        data-bs-toggle="modal" data-bs-target="#signupModal"
+                        data-event-title="Осенний фестиваль музыки под открытым небом"
+                        data-event-date="16 ноября, 18:00"
+                        data-event-place="Химки, парк «Центральный»"
+                        data-event-price="от 900 ₽"
+                        data-event-action="Купить билет">
+                  <i class="bi bi-ticket-perforated me-1" aria-hidden="true"></i>Купить билет
+                </button>
+                <a href="events/osenniy-festival.html" class="btn btn-moslife-ghost">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ======= БЛИЖАЙШИЕ МЕРОПРИЯТИЯ ======= -->
+    <section class="mb-5" aria-labelledby="events-title">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+        <div>
+          <h2 id="events-title" class="mb-1">Ближайшие мероприятия</h2>
+          <p class="text-muted-soft mb-0">Культурные, спортивные и городские события рядом с вами</p>
+        </div>
+        <a href="catalog.html" class="btn btn-moslife-ghost btn-sm">Каталог событий <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- 1 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card card-event">
+            <div class="card-event__cover">
+              <img class="card-event__cover-img" src="img/placeholder.png" alt="Выставка современного искусства «Городские линии»">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="chip"><i class="bi bi-palette chip__icon" aria-hidden="true"></i>Культура</span>
+                <span class="card-event__price">600 ₽</span>
+              </div>
+              <h3 class="card-title">Выставка современного искусства «Городские линии»</h3>
+              <p class="card-event__meta mb-3">
+                <span><i class="bi bi-calendar3" aria-hidden="true"></i> 8 ноября</span>
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Москва, ЦСИ</span>
+              </p>
+              <div class="mt-auto d-flex gap-2">
+                <button type="button"
+                        class="btn btn-moslife-accent btn-sm flex-grow-1"
+                        data-bs-toggle="modal" data-bs-target="#signupModal"
+                        data-event-title="Выставка современного искусства «Городские линии»"
+                        data-event-date="8 ноября"
+                        data-event-place="Москва, ЦСИ"
+                        data-event-price="600 ₽"
+                        data-event-action="Купить билет">Билеты</button>
+                <a href="events/gorodskie-linii.html" class="btn btn-moslife-ghost btn-sm" aria-label="Подробнее о событии «Выставка современного искусства Городские линии»"><i class="bi bi-info-circle" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card card-event">
+            <div class="card-event__cover">
+              <img class="card-event__cover-img" src="img/placeholder.png" alt="Открытая тренировка по баскетболу 3×3">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="chip"><i class="bi bi-dribbble chip__icon" aria-hidden="true"></i>Спорт</span>
+                <span class="card-event__price card-event__price--free">Бесплатно</span>
+              </div>
+              <h3 class="card-title">Открытая тренировка по баскетболу 3×3</h3>
+              <p class="card-event__meta mb-3">
+                <span><i class="bi bi-calendar3" aria-hidden="true"></i> 9 ноября</span>
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Люберцы, спортпарк</span>
+              </p>
+              <div class="mt-auto d-flex gap-2">
+                <button type="button"
+                        class="btn btn-moslife-accent btn-sm flex-grow-1"
+                        data-bs-toggle="modal" data-bs-target="#signupModal"
+                        data-event-title="Открытая тренировка по баскетболу 3×3"
+                        data-event-date="9 ноября"
+                        data-event-place="Люберцы, спортпарк"
+                        data-event-price="Бесплатно"
+                        data-event-action="Записаться на тренировку">Участвовать</button>
+                <a href="events/basketball-3x3.html" class="btn btn-moslife-ghost btn-sm" aria-label="Подробнее о событии «Открытая тренировка по баскетболу 3×3»"><i class="bi bi-info-circle" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 3 (featured) -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card card-event card-event--featured">
+            <div class="card-event__cover">
+              <img class="card-event__cover-img" src="img/placeholder.png" alt="Спектакль «Тени большого города»">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="chip"><i class="bi bi-star chip__icon" aria-hidden="true"></i>Хит</span>
+                <span class="card-event__price">1 200 ₽</span>
+              </div>
+              <h3 class="card-title">Спектакль «Тени большого города»</h3>
+              <p class="card-event__meta mb-3">
+                <span><i class="bi bi-calendar3" aria-hidden="true"></i> 12 ноября</span>
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Москва, театр</span>
+              </p>
+              <div class="mt-auto d-flex gap-2">
+                <button type="button"
+                        class="btn btn-moslife-accent btn-sm flex-grow-1"
+                        data-bs-toggle="modal" data-bs-target="#signupModal"
+                        data-event-title="Спектакль «Тени большого города»"
+                        data-event-date="12 ноября"
+                        data-event-place="Москва, театр"
+                        data-event-price="1 200 ₽"
+                        data-event-action="Купить билет">Билеты</button>
+                <a href="events/teni-bolshogo-goroda.html" class="btn btn-moslife-ghost btn-sm" aria-label="Подробнее о событии «Спектакль Тени большого города»"><i class="bi bi-info-circle" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card card-event">
+            <div class="card-event__cover">
+              <img class="card-event__cover-img" src="img/placeholder.png" alt="Городской забег «Осенний марафон»">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="chip"><i class="bi bi-trophy chip__icon" aria-hidden="true"></i>Спорт</span>
+                <span class="card-event__price">800 ₽</span>
+              </div>
+              <h3 class="card-title">Городской забег «Осенний марафон»</h3>
+              <p class="card-event__meta mb-3">
+                <span><i class="bi bi-calendar3" aria-hidden="true"></i> 15 ноября</span>
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Москва, набережная</span>
+              </p>
+              <div class="mt-auto d-flex gap-2">
+                <button type="button"
+                        class="btn btn-moslife-accent btn-sm flex-grow-1"
+                        data-bs-toggle="modal" data-bs-target="#signupModal"
+                        data-event-title="Городской забег «Осенний марафон»"
+                        data-event-date="15 ноября"
+                        data-event-place="Москва, набережная"
+                        data-event-price="800 ₽"
+                        data-event-action="Зарегистрироваться">Регистрация</button>
+                <a href="events/osenniy-marafon.html" class="btn btn-moslife-ghost btn-sm" aria-label="Подробнее о событии «Городской забег Осенний марафон»"><i class="bi bi-info-circle" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card card-event">
+            <div class="card-event__cover">
+              <img class="card-event__cover-img" src="img/placeholder.png" alt="Ночной концерт электронной музыки">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="chip"><i class="bi bi-music-note-list chip__icon" aria-hidden="true"></i>Развлечения</span>
+                <span class="card-event__price">от 1 500 ₽</span>
+              </div>
+              <h3 class="card-title">Ночной концерт электронной музыки</h3>
+              <p class="card-event__meta mb-3">
+                <span><i class="bi bi-calendar3" aria-hidden="true"></i> 18 ноября</span>
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Химки, клуб</span>
+              </p>
+              <div class="mt-auto d-flex gap-2">
+                <button type="button"
+                        class="btn btn-moslife-accent btn-sm flex-grow-1"
+                        data-bs-toggle="modal" data-bs-target="#signupModal"
+                        data-event-title="Ночной концерт электронной музыки"
+                        data-event-date="18 ноября"
+                        data-event-place="Химки, клуб"
+                        data-event-price="от 1 500 ₽"
+                        data-event-action="Купить билет">Билеты</button>
+                <a href="events/nochnoy-koncert.html" class="btn btn-moslife-ghost btn-sm" aria-label="Подробнее о событии «Ночной концерт электронной музыки»"><i class="bi bi-info-circle" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card card-event">
+            <div class="card-event__cover">
+              <img class="card-event__cover-img" src="img/placeholder.png" alt="Лекция «Город будущего: урбанистика Москвы»">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="chip"><i class="bi bi-book chip__icon" aria-hidden="true"></i>Образование</span>
+                <span class="card-event__price card-event__price--free">Бесплатно</span>
+              </div>
+              <h3 class="card-title">Лекция «Город будущего: урбанистика Москвы»</h3>
+              <p class="card-event__meta mb-3">
+                <span><i class="bi bi-calendar3" aria-hidden="true"></i> 21 ноября</span>
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Москва, библиотека</span>
+              </p>
+              <div class="mt-auto d-flex gap-2">
+                <button type="button"
+                        class="btn btn-moslife-accent btn-sm flex-grow-1"
+                        data-bs-toggle="modal" data-bs-target="#signupModal"
+                        data-event-title="Лекция «Город будущего: урбанистика Москвы»"
+                        data-event-date="21 ноября"
+                        data-event-place="Москва, библиотека"
+                        data-event-price="Бесплатно"
+                        data-event-action="Записаться">Записаться</button>
+                <a href="events/urbanistika-moskvy.html" class="btn btn-moslife-ghost btn-sm" aria-label="Подробнее о событии «Лекция Город будущего урбанистика Москвы»"><i class="bi bi-info-circle" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= БЛИЖАЙШИЕ ДАТЫ + БИЛЕТЫ ======= -->
+    <section class="mb-5" aria-labelledby="dates-title">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7">
+          <h2 id="dates-title" class="mb-3">Ближайшие даты</h2>
+          <ul class="list-group meet-list">
+            <li class="list-group-item d-flex align-items-center gap-3 py-3">
+              <div class="meet-date">
+                <span class="meet-date__day">08</span>
+                <span class="meet-date__month">ноя</span>
+              </div>
+              <div class="flex-grow-1">
+                <div class="fw-semibold">Выставка «Городские линии»</div>
+                <div class="small text-muted-soft">Москва, ЦСИ · Культура · 600 ₽</div>
+              </div>
+              <button type="button"
+                      class="btn btn-moslife-ghost btn-sm"
+                      data-bs-toggle="modal" data-bs-target="#signupModal"
+                      data-event-title="Выставка «Городские линии»"
+                      data-event-date="8 ноября"
+                      data-event-place="Москва, ЦСИ"
+                      data-event-price="600 ₽"
+                      data-event-action="Купить билет">Билеты</button>
+            </li>
+            <li class="list-group-item d-flex align-items-center gap-3 py-3">
+              <div class="meet-date">
+                <span class="meet-date__day">09</span>
+                <span class="meet-date__month">ноя</span>
+              </div>
+              <div class="flex-grow-1">
+                <div class="fw-semibold">Баскетбол 3×3</div>
+                <div class="small text-muted-soft">Люберцы, спортпарк · Спорт · Бесплатно</div>
+              </div>
+              <button type="button"
+                      class="btn btn-moslife-ghost btn-sm"
+                      data-bs-toggle="modal" data-bs-target="#signupModal"
+                      data-event-title="Баскетбол 3×3"
+                      data-event-date="9 ноября"
+                      data-event-place="Люберцы, спортпарк"
+                      data-event-price="Бесплатно"
+                      data-event-action="Участвовать">Участвовать</button>
+            </li>
+            <li class="list-group-item d-flex align-items-center gap-3 py-3">
+              <div class="meet-date">
+                <span class="meet-date__day">12</span>
+                <span class="meet-date__month">ноя</span>
+              </div>
+              <div class="flex-grow-1">
+                <div class="fw-semibold">Спектакль «Тени большого города»</div>
+                <div class="small text-muted-soft">Москва, театр · Культура · 1 200 ₽</div>
+              </div>
+              <button type="button"
+                      class="btn btn-moslife-ghost btn-sm"
+                      data-bs-toggle="modal" data-bs-target="#signupModal"
+                      data-event-title="Спектакль «Тени большого города»"
+                      data-event-date="12 ноября"
+                      data-event-place="Москва, театр"
+                      data-event-price="1 200 ₽"
+                      data-event-action="Купить билет">Билеты</button>
+            </li>
+            <li class="list-group-item d-flex align-items-center gap-3 py-3">
+              <div class="meet-date">
+                <span class="meet-date__day">15</span>
+                <span class="meet-date__month">ноя</span>
+              </div>
+              <div class="flex-grow-1">
+                <div class="fw-semibold">Осенний марафон</div>
+                <div class="small text-muted-soft">Москва, набережная · Спорт · 800 ₽</div>
+              </div>
+              <button type="button"
+                      class="btn btn-moslife-ghost btn-sm"
+                      data-bs-toggle="modal" data-bs-target="#signupModal"
+                      data-event-title="Осенний марафон"
+                      data-event-date="15 ноября"
+                      data-event-place="Москва, набережная"
+                      data-event-price="800 ₽"
+                      data-event-action="Зарегистрироваться">Регистрация</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-5">
+          <aside class="info-panel">
+            <h2 class="h5 mb-2">Где купить билеты?</h2>
+            <p class="text-muted-soft small mb-3">
+              На карточке каждого события указана стоимость посещения и ссылка на покупку
+              билета у организатора. MosLife не берёт комиссию — вы платите только за событие.
+            </p>
+            <ul class="info-panel__list">
+              <li><i class="bi bi-check2-circle info-panel__check" aria-hidden="true"></i>Официальные билеты организаторов</li>
+              <li><i class="bi bi-check2-circle info-panel__check" aria-hidden="true"></i>Бесплатные события с записью</li>
+              <li><i class="bi bi-check2-circle info-panel__check" aria-hidden="true"></i>Оплата онлайн 24/7</li>
+            </ul>
+            <a href="catalog.html" class="btn btn-moslife-accent w-100">
+              <i class="bi bi-search me-1" aria-hidden="true"></i>Перейти в каталог
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= CTA ПОДПИСКА ======= -->
+    <section class="mb-5" aria-labelledby="subscribe-title">
+      <div class="subscribe text-center">
+        <h2 id="subscribe-title" class="mb-2">Не пропускайте события вашего города</h2>
+        <p class="text-muted-soft mb-4">
+          Подпишитесь на подборки MosLife — присылаем афишу Москвы и окрестностей раз в неделю.
+        </p>
+        <form class="row g-2 justify-content-center" action="#" method="post">
+          <div class="col-12 col-md-5">
+            <input class="form-control" type="email" placeholder="Ваш e-mail" required aria-label="Ваш e-mail">
+          </div>
+          <div class="col-12 col-md-auto d-grid">
+            <button class="btn btn-moslife-accent px-4" type="submit">Подписаться</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a class="site-footer__brand d-inline-flex align-items-center gap-2" href="index.html">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i> MosLife
+          </a>
+          <p class="site-footer__list mt-2 mb-0">
+            Афиша мероприятий Москвы и окрестностей: культура, спорт и городские события.
+          </p>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="site-footer__title">Разделы</div>
+          <ul class="site-footer__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог событий</a></li>
+            <li><a href="meetings.html">Мероприятия города</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="site-footer__title">Города</div>
+          <ul class="site-footer__list">
+            <li><a href="catalog.html">Москва</a></li>
+            <li><a href="catalog.html">Химки</a></li>
+            <li><a href="catalog.html">Люберцы</a></li>
+            <li><a href="catalog.html">Красногорск</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="site-footer__title">Контакты</div>
+          <ul class="site-footer__list">
+            <li><i class="bi bi-geo-alt" aria-hidden="true"></i> Москва, ул. Городская, 1</li>
+            <li><i class="bi bi-envelope" aria-hidden="true"></i> hello@moslife.ru</li>
+            <li><i class="bi bi-telephone" aria-hidden="true"></i> +7 (495) 000-00-00</li>
+          </ul>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#" class="btn btn-moslife-ghost btn-sm" aria-label="Telegram"><i class="bi bi-telegram" aria-hidden="true"></i></a>
+            <a href="#" class="btn btn-moslife-ghost btn-sm" aria-label="VK"><i class="bi bi-chat-dots" aria-hidden="true"></i></a>
+            <a href="#" class="btn btn-moslife-ghost btn-sm" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom d-flex flex-wrap justify-content-between gap-2">
+        <span>© 2025 MosLife. Все права защищены.</span>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======= MODAL: ПОИСК ======= -->
+  <div class="modal fade modal-moslife" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="searchModalLabel">Найти событие</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <form action="catalog.html" method="get">
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label" for="modal-q">Что ищем?</label>
+              <input class="form-control" type="text" id="modal-q" name="q" placeholder="Событие, площадка...">
+            </div>
+            <div class="row g-2">
+              <div class="col-sm-6">
+                <label class="form-label" for="modal-place">Место</label>
+                <select class="form-select" id="modal-place" name="place">
+                  <option value="">Везде</option>
+                  <option>Только Москва</option>
+                  <option>Химки</option>
+                  <option>Люберцы</option>
+                  <option>Красногорск</option>
+                  <option>Одинцово</option>
+                  <option>Котельники</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="modal-sphere">Сфера</label>
+                <select class="form-select" id="modal-sphere" name="sphere">
+                  <option value="">Все сферы</option>
+                  <option>Культура</option>
+                  <option>Спорт</option>
+                  <option>Развлечения</option>
+                  <option>Образование</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-moslife-ghost" data-bs-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-moslife-accent">Найти</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= MODAL: ЗАПИСЬ / ЗАЯВКА ======= -->
+  <div class="modal fade modal-moslife" id="signupModal" tabindex="-1"
+       aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="signupModalLabel">Запись на событие</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <form action="#" method="post" novalidate>
+          <div class="modal-body">
+            <div class="signup-event" aria-live="polite">
+              <div class="signup-event__title" id="signupEventTitle"></div>
+              <div class="signup-event__meta">
+                <span><i class="bi bi-calendar3" aria-hidden="true"></i> <span id="signupEventDate"></span></span>
+                <span><i class="bi bi-geo-alt" aria-hidden="true"></i> <span id="signupEventPlace"></span></span>
+                <span><i class="bi bi-ticket-perforated" aria-hidden="true"></i> <span id="signupEventPrice"></span></span>
+              </div>
+            </div>
+
+            <input type="hidden" id="signupEventField" name="event">
+
+            <div class="mb-3">
+              <label class="form-label" for="signupName">Имя и фамилия</label>
+              <input class="form-control" type="text" id="signupName" name="name" required autocomplete="name">
+              <div class="invalid-feedback">Укажите имя.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="signupContact">E-mail или телефон</label>
+              <input class="form-control" type="text" id="signupContact" name="contact" required autocomplete="email">
+              <div class="invalid-feedback">Укажите e-mail или телефон для связи.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="signupComment">Комментарий (необязательно)</label>
+              <textarea class="form-control" id="signupComment" name="comment" rows="2"></textarea>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="signupAgree" name="agree" required>
+              <label class="form-check-label" for="signupAgree">
+                Согласен(на) на обработку персональных данных
+              </label>
+              <div class="invalid-feedback">Нужно согласие.</div>
+            </div>
+
+            <p id="signupStatus" class="small mb-0 mt-3" role="status" aria-live="polite"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-moslife-ghost" data-bs-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-moslife-accent">Отправить заявку</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="back-to-top" aria-label="Наверх">↑</a>
+
+  <!-- Bootstrap 5 JS Bundle (нужен для collapse и modal) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Логика модалки записи -->
+  <script src="js/signup.js"></script>
+</body>
+</html>
